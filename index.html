@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMLab | Reserva de espaços acadêmicos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="UMLab - início">UMLab</a>
+    <nav aria-label="Navegação principal">
+      <a class="active" href="#inicio">Visão geral</a>
+      <a href="#laboratorios">Laboratórios</a>
+      <a href="#reservas">Minhas reservas</a>
+    </nav>
+    <a class="professor-link" href="#nova-reserva">♙ Portal do professor</a>
+  </header>
+
+  <main class="container" id="inicio">
+    <section class="intro">
+      <p class="eyebrow">RESERVA DE ESPAÇOS ACADÊMICOS</p>
+      <div class="intro-line">
+        <div>
+          <h1>Um espaço para cada ideia.</h1>
+          <p class="muted">Consulte os laboratórios e organize suas próximas aulas em um só lugar.</p>
+        </div>
+        <span class="today" id="today">◷ Data de hoje</span>
+      </div>
+    </section>
+
+    <section id="laboratorios" class="section">
+      <div class="section-heading">
+        <div class="heading-group"><h2>Laboratórios</h2><span class="counter">03 espaços</span></div>
+        <span class="muted small" id="available-count">2 disponíveis para reservar</span>
+      </div>
+      <div class="lab-grid">
+        <article class="lab-card">
+          <div class="card-top"><span class="lab-icon">▦</span><span class="status available">Disponível</span></div>
+          <h3>Laboratório 01</h3><p class="muted small">♧ 30 alunos</p>
+          <button class="outline-button reserve-lab" data-lab="Laboratório 01">Reservar espaço <span>→</span></button>
+        </article>
+        <article class="lab-card">
+          <div class="card-top"><span class="lab-icon">▦</span><span class="status unavailable">Indisponível</span></div>
+          <h3>Laboratório 02</h3><p class="muted small">♧ 40 alunos</p>
+          <button class="disabled-button" disabled>Não disponível</button>
+        </article>
+        <article class="lab-card">
+          <div class="card-top"><span class="lab-icon">▦</span><span class="status available">Disponível</span></div>
+          <h3>Laboratório 03</h3><p class="muted small">♧ 25 alunos</p>
+          <button class="outline-button reserve-lab" data-lab="Laboratório 03">Reservar espaço <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel form-panel" id="nova-reserva">
+        <h2>Nova reserva</h2>
+        <p class="muted small">Preencha os dados e garanta seu espaço.</p>
+        <form id="reservation-form">
+          <div class="form-row">
+            <label class="field grow">Nome do professor *
+              <input type="text" id="professor" placeholder="Ex.: Mariana Oliveira" required>
+            </label>
+            <label class="field matricula">Matrícula *
+              <input type="text" id="matricula" placeholder="2024018" required>
+            </label>
+          </div>
+          <label class="field">Laboratório *
+            <select id="laboratorio" required>
+              <option value="">Selecione um laboratório</option>
+              <option>Laboratório 01</option>
+              <option disabled>Laboratório 02 — indisponível</option>
+              <option>Laboratório 03</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label class="field grow">Data *
+              <input type="date" id="data" required>
+            </label>
+            <label class="field grow">Horário *
+              <select id="horario" required>
+                <option value="">Selecione</option>
+                <option>08:00 – 10:00</option>
+                <option>09:00 – 11:00</option>
+                <option>10:00 – 12:00</option>
+                <option>14:00 – 16:00</option>
+                <option>16:00 – 18:00</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">Finalidade *
+            <textarea id="finalidade" rows="3" placeholder="Descreva brevemente a atividade." required></textarea>
+          </label>
+          <p class="hint">ⓘ Todos os campos são obrigatórios.</p>
+          <button class="primary-button" type="submit">Confirmar reserva <span>→</span></button>
+          <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="right-column">
+        <section class="panel reservations-panel" id="reservas">
+          <div class="reservation-title">
+            <div><h2>Minhas reservas</h2><p class="muted small">Suas próximas aulas já têm lugar.</p></div>
+            <span class="counter" id="reservation-count">03</span>
+          </div>
+          <div class="table-head"><span>ESPAÇO / FINALIDADE</span><span>DATA E HORÁRIO</span><span>STATUS</span></div>
+          <div id="reservation-list">
+            <article class="reservation-row">
+              <div><strong>Laboratório 01</strong><small>Aula prática de algoritmos</small></div>
+              <div><strong>20 nov 2026</strong><small>09:00 – 11:00</small></div>
+              <span class="confirmed">✓ Confirmada</span>
+            </article>
+            <article class="reservation-row">
+              <div><strong>Laboratório 03</strong><small>Projeto de extensão</small></div>
+              <div><strong>23 nov 2026</strong><small>14:00 – 16:00</small></div>
+              <span class="confirmed">✓ Confirmada</span>
+            </article>
+            <article class="reservation-row">
+              <div><strong>Laboratório 01</strong><small>Introdução à programação</small></div>
+              <div><strong>25 nov 2026</strong><small>10:00 – 12:00</small></div>
+              <span class="confirmed">✓ Confirmada</span>
+            </article>
+          </div>
+        </section>
+        <div class="notice">ⓘ Suas reservas ficam disponíveis durante esta sessão. Confira os dados antes de confirmar uma nova reserva.</div>
+      </section>
+    </section>
+
+  </main>
+</body>
+</html>
