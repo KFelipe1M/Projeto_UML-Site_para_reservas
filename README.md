@@ -6,6 +6,12 @@ espaços disponíveis, preencher uma solicitação de reserva e acompanhar
 as reservas exibidas na página.
 Veja o site aqui: https://kfelipe1m.github.io/Projeto_UML-Site_para_reservas/
 
+| Nome | Matrícula |
+|---|---|
+| Kauã Filipe Moreno Marques | 01791750 |
+| Lucas Teobaldo Cruz | 01802436 |
+| Victor Ribeiro Barbosa de Menezes | 01791754 |
+
 ## Funcionalidades
 
 -   Visualização de três laboratórios, com capacidade e situação
@@ -116,19 +122,6 @@ o campo de laboratório e levam o usuário até o formulário.
 Por isso, o status "Confirmada" exibido após o envio representa a
 inclusão do registro na lista da página, não uma confirmação feita por
 um serviço central ou por um banco de dados.
-
-## Melhorias futuras
-
--   Integrar um banco de dados para persistir reservas.
--   Implementar verificação de disponibilidade por laboratório, data e
-    horário.
--   Impedir reservas duplicadas ou conflitantes.
--   Permitir editar e cancelar reservas.
--   Associar cada reserva aos dados do professor.
--   Atualizar automaticamente os indicadores de disponibilidade e os
-    contadores.
--   Desenvolver uma área administrativa para gerenciar laboratórios e
-    reservas.
 
 ## Observações
 
